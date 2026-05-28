@@ -1,0 +1,35 @@
+set nocompatible
+set backspace=indent,eol,start
+set history=50
+set ruler
+set number
+set showcmd
+set showmatch
+set showmode
+set lazyredraw
+set hlsearch
+set incsearch
+set nobackup
+set writebackup
+set nojoinspaces
+set wildmenu
+set wildmode=longest,list
+set background=dark
+set tabstop=8
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set scrolloff=5
+set foldmethod=syntax
+set nofoldenable
+set noerrorbells
+set novisualbell
+
+syntax on
+hi CursorColumn cterm=none ctermbg=blue ctermfg=none
+
+:let columns=['0', '80']
+:let &cc=columns[0]
+
+nmap <silent> <F9> :set cursorcolumn!<CR>
+nmap <silent> <F10> :let &cc=columns[(index(columns, &cc) + 1) % len(columns)]<CR>
